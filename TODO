@@ -1,0 +1,8 @@
+Jasmine Standalone and Ruby Jasmine Gem
+  - see test-js/README.md for more info
+
+Writing and Running Jasmine Specs With Rails 3.1 and CoffeeScript
+http://pivotallabs.com/users/jdean/blog/articles/1778
+
+Guard
+https://github.com/guard/guard

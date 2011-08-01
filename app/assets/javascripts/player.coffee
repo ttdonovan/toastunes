@@ -1,0 +1,1 @@
+window.Player = class Player

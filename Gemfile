@@ -22,5 +22,11 @@ gem 'devise'                                  # for user authentication
 gem 'httparty'                                # for talking to AWS
 gem 'ruby-hmac'                               # for generating AWS API signatures
 
+group :development, :test do
+  gem 'jasmine'
+  gem 'rspec-rails'
+  gem 'spork'
+end
+
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
