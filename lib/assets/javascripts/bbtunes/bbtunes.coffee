@@ -1,2 +1,0 @@
-BBtunes = {}
-window.BBtunes = BBtunes
