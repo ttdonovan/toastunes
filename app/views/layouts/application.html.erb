@@ -4,6 +4,8 @@
   <title>Toastunes</title>
   <%= stylesheet_link_tag    'application' %>
   <%= javascript_include_tag 'application' %>
+  <%# includes the Backbone.js BBtunes app (lib/assets/javascripts/bbtunes) %>
+  <%= javascript_include_tag 'bbtunes' if params[:bb] %>
   <%= csrf_meta_tag %>
 </head>
 <body>

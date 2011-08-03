@@ -1,0 +1,2 @@
+BBtunes = {}
+window.BBtunes = BBtunes
