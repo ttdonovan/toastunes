@@ -3,6 +3,7 @@ class AlbumsController < ApplicationController
   before_filter :authenticate_user!
   
   # GET /albums
+  # GET /albums.json
   # GET /albums.xml
   def index
 
@@ -27,6 +28,7 @@ class AlbumsController < ApplicationController
     @genres = sorted_genres # application_helper.rb
     respond_to do |format|
       format.html # index.html.erb
+      format.json { render 'index.json.rabl' }
       format.xml  { render :xml => @albums }
     end
   end

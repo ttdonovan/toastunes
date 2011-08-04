@@ -4,4 +4,4 @@ describe "BBtunes", ->
     @bbtunes = window.BBtunes
 
   it "has an version", ->
-    (expect @bbtunes.VERSION).toBeTruthy
+    (expect @bbtunes.VERSION).toBeTruthy()
