@@ -34,15 +34,18 @@ class AlbumsController < ApplicationController
   end
 
   # GET /albums/1
+  # GET /albums/1.json
   # GET /albums/1.xml
   def show
     @album = Album.find(params[:id])
     @new_comment = @album.comments.build
     @genres = sorted_genres # application_controller.rb
     @covers = session[:covers] && session[:covers][@album.id.to_s] ? session[:covers][@album.id.to_s] : []
+    @tracks = @album.tracks
     @error = nil
     respond_to do |format|
       format.html # show.html.erb
+      format.json { render 'show.json.rabl' }
       format.xml  { render :xml => @album }
     end
   end

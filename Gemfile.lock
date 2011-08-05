@@ -52,6 +52,7 @@ GEM
       orm_adapter (~> 0.0.3)
       warden (~> 1.0.3)
     diff-lcs (1.1.2)
+    ejs (1.0.0)
     erubis (2.7.0)
     execjs (1.2.1)
       multi_json (~> 1.0)
@@ -168,6 +169,7 @@ DEPENDENCIES
   bson_ext
   coffee-rails (~> 3.1.0.rc)
   devise
+  ejs
   haml
   httparty
   jasmine

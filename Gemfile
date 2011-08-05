@@ -17,6 +17,7 @@ gem 'mongoid'
 gem 'bson_ext'                                # faster C-based JSON lib
 gem 'ruby-mp3info'                            # for ID3 tag parsing
 gem 'haml'                                    # for view templates
+gem 'ejs'                                     # for JST templates
 gem 'rabl'                                    # for JSON templates
 gem 'yajl-ruby',    :require => 'yajl'        # faster JSON encoding engine
 gem 'rmagick',      :require => "RMagick"     # for image processing
