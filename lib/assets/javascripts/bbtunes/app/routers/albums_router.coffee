@@ -6,13 +6,18 @@ window.BBtunes.AlbumsRouter = Backbone.Router.extend
   }
 
   initialize: ->
-    @albumsIndexView = new window.BBtunes.AlbumsIndexView
-      collection: new window.BBtunes.Albums
+    albums = new window.BBtunes.Albums
+    @albumsListView = new window.BBtunes.AlbumsListView
+      collection: albums
+    @tracksListView = new window.BBtunes.TracksListView
+      collection: new window.BBtunes.Tracks
+      albums: albums
     null
 
   albums: ->
     ($ 'body').empty()
-    ($ 'body').append(@albumsIndexView.render().el)
+    ($ 'body').append(@albumsListView.render().el)
+    ($ 'body').append(@tracksListView.render().el)
     null
 
 # FIXME: temporary until figure out the best way to initialize BBtunes
@@ -21,5 +26,5 @@ window.BBtunes.AlbumsRouter = Backbone.Router.extend
   Backbone.history.start pushSate: true
   window.BBtunes.App.albums()
   # FIXME: where's the best place to 'fetch' the collection data?
-  window.BBtunes.App.albumsIndexView.collection.fetch()
+  window.BBtunes.App.albumsListView.collection.fetch()
   null

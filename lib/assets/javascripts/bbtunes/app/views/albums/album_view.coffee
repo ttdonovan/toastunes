@@ -1,5 +1,5 @@
-# TODO: write spec for window.BBtunes.AlbumShowView
-window.BBtunes.AlbumShowView = Backbone.View.extend
+# TODO: write spec for window.BBtunes.AlbumView
+window.BBtunes.AlbumView = Backbone.View.extend
 
   template: JST['bbtunes/albums/show']
 
@@ -7,6 +7,7 @@ window.BBtunes.AlbumShowView = Backbone.View.extend
 
   events:
     'click .artist a': 'fetchModel'
+    'click': 'select'
 
   initialize: ->
     _.bindAll @, 'render'
@@ -14,6 +15,7 @@ window.BBtunes.AlbumShowView = Backbone.View.extend
 
   render: ->
     data = @model.toJSON()
+    data['thumbnail_image'] = @model.thumbnailImage()
     data['star_rating'] = @model.starRating()
     ($ @el).html @template(data)
     @
@@ -21,3 +23,6 @@ window.BBtunes.AlbumShowView = Backbone.View.extend
   fetchModel: (e) ->
     e.preventDefault()
     @model.fetch
+
+  select: ->
+    @collection.trigger 'select', this.model

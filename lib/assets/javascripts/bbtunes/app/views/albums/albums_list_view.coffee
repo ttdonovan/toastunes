@@ -1,5 +1,5 @@
-# TODO: write spec for window.BBtunes.AlbumsIndexView
-window.BBtunes.AlbumsIndexView = Backbone.View.extend
+# TODO: write spec for window.BBtunes.AlbumsListView
+window.BBtunes.AlbumsListView = Backbone.View.extend
 
   template: JST['bbtunes/albums/index']
 
@@ -17,7 +17,8 @@ window.BBtunes.AlbumsIndexView = Backbone.View.extend
   render: ->
     ($ @el).html @template {} # TODO: review this statement in BBtunes.AlbumsIndexView, confused why using $(this.el) instead of this.$
     $albums = @$ '.albums'
+    collection = @collection
     @collection.each (album) ->
-      view = new window.BBtunes.AlbumShowView model: album
+      view = new window.BBtunes.AlbumView model: album, collection: collection
       $albums.append view.render().el
     @

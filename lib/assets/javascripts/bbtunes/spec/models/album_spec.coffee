@@ -11,3 +11,12 @@ describe "Album", ->
     it "is 3 given a rating of 75", ->
       @album.set rating: 75
       (expect @album.starRating()).toBe 3
+
+  describe "has a thumbnail image", ->
+
+    it "is a default 'no image' path if no thumbnail was provided", ->
+      (expect @album.thumbnailImage()).toBe 'no_cover.jpg'
+
+    it "is the thumbnail image path if a thumbnail was provided", ->
+      @album.set thumbnail: 'cover.jpg'
+      (expect @album.thumbnailImage()).toBe 'thumbnails/cover.jpg'
